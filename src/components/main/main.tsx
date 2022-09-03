@@ -4,6 +4,7 @@ import { useAppDispatch, useAppSelector } from "../../hooks/storeHooks";
 import { CategoryType, setCategory } from "../../features/appSlice";
 import { Search } from "../search/search";
 import { Container } from "../container/container";
+import { Cards } from "../cards/cards";
 
 const categories = [
   "Sculpture",
@@ -57,6 +58,7 @@ export function Main() {
         />
         <Search height={27} width={278} inputHeight={50} title="Name" />
       </Container>
+      <Cards />
     </StyledMain>
   );
 }
