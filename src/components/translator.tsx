@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useAppDispatch, useAppSelector } from "../hooks/storeHooks";
 import { Select } from "./select/select";
-import { setLanguage, TranslatorType } from "../features/translatorSlice";
+import { setLanguage, TranslatorType } from "../features/appSlice";
 
 const StyledTranslator = styled.div`
   position: relative;

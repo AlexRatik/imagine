@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Select } from "../select/select";
 import { useAppDispatch, useAppSelector } from "../../hooks/storeHooks";
-import { CategoryType, setCategory } from "../../features/translatorSlice";
+import { CategoryType, setCategory } from "../../features/appSlice";
 import { Search } from "../search/search";
 import { Container } from "../container/container";
 
