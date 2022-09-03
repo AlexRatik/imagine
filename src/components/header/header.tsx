@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { ReactComponent as Logo } from "../assets/logo.svg";
-import { NavList } from "./navList/navList";
+import { ReactComponent as Logo } from "../../assets/logo.svg";
+import { NavList } from "../navList/navList";
 
 const StyledHeader = styled.header`
   padding: 0 255px;

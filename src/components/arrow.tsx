@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const StyledArrow = styled.div`
+const StyledArrow = styled.div<{ rotated: boolean }>`
   display: inline-block;
   margin-left: 10px;
   width: 10px;
@@ -8,12 +8,19 @@ const StyledArrow = styled.div`
   border: 2px solid #b8b8b8;
   border-left: none;
   border-top: none;
-  transform: rotate(45deg) translate(-50%);
+  transition: all 0.25s ease-in-out;
+  transform: rotate(${(props) => (props.rotated ? -135 : 45)}deg)
+    translateX(${(props) => (props.rotated ? -50 : 0)}%)
+    translate(${(props) => (props.rotated ? 50 : -50)}%);
   &:hover {
     cursor: pointer;
   }
 `;
 
-export function Arrow() {
-  return <StyledArrow />;
+interface IArrowProps {
+  rotated: boolean;
+}
+
+export function Arrow({ rotated }: IArrowProps) {
+  return <StyledArrow rotated={rotated} />;
 }

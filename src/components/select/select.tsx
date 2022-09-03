@@ -22,6 +22,9 @@ const StyledTitleContainer = styled.div<{ height: number }>`
   align-items: center;
   height: ${(props) => props.height};
   padding: 4px;
+  p {
+    width: 2.5rem;
+  }
   &:hover {
     cursor: pointer;
   }
@@ -43,8 +46,8 @@ export function Select({
         height={height}
         onClick={() => setShowSelectBox((prev) => !prev)}
       >
-        <span>{selectedValue}</span>
-        <Arrow />
+        <p>{selectedValue}</p>
+        <Arrow rotated={showSelectBox} />
       </StyledTitleContainer>
       <SelectBox
         name={name}

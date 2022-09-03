@@ -9,25 +9,20 @@ interface ISelectOptionProps {
 }
 
 const StyledSelectOption = styled.div<{ height: number }>`
+  position: relative;
   height: ${(props) => props.height}px;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  line-height: ${(props) => props.height}px;
   border-radius: 10px;
   transition: all 0.25s ease-in-out;
   cursor: pointer;
-  padding: 4px;
   &:hover {
     background-color: #c7c7c7ff;
     color: #ffffff;
   }
-  label,
-  input {
-    cursor: pointer;
-  }
   label {
     width: 100%;
+    cursor: pointer;
   }
 `;
 
@@ -40,14 +35,67 @@ export function SelectOption({
 }: ISelectOptionProps) {
   return (
     <StyledSelectOption height={height}>
-      <label htmlFor={value}>{value}</label>
-      <input
+      <StyledRadioInput
         type="radio"
         id={value}
         name={name}
         onChange={() => onInput(value)}
         checked={checked}
+        height={height}
       />
+      <label htmlFor={value}>{value}</label>
     </StyledSelectOption>
   );
 }
+
+const StyledRadioInput = styled.input<{ height: number }>`
+  &:checked,
+  &:not(:checked) {
+    position: absolute;
+    left: -1000px;
+  }
+
+  &:checked + label,
+  &:checked:not(:checked) + label {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    color: #000000;
+  }
+
+  &:checked + label:before,
+  &:not(:checked) + label:before {
+    content: "";
+    position: absolute;
+    top: ${(props) => (props.height - 18) / 2 - 1}px;
+    right: 0;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    background-color: #ffffff;
+  }
+
+  &:checked + label:after,
+  &:not(:checked) + label:after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    background-color: #000000;
+    position: absolute;
+    top: ${(props) => (props.height - 18) / 2 + 3}px;
+    right: 4px;
+    border-radius: 50%;
+    transition: all 0.7s ease;
+  }
+
+  &:not(:checked) + label:after {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  &:checked + label:after {
+    opacity: 1;
+    transform: scale(1);
+  }
+`;
