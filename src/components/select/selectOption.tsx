@@ -34,7 +34,7 @@ export function SelectOption({
   checked,
 }: ISelectOptionProps) {
   return (
-    <StyledSelectOption height={height}>
+    <StyledSelectOption height={height} onClick={() => onInput(value)}>
       <StyledRadioInput
         type="radio"
         id={value}
@@ -52,7 +52,7 @@ const StyledRadioInput = styled.input<{ height: number }>`
   &:checked,
   &:not(:checked) {
     position: absolute;
-    left: -1000px;
+    left: -10000px;
   }
 
   &:checked + label,

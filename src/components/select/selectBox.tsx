@@ -19,7 +19,8 @@ const StyledSelect = styled.div<{ isShow: boolean }>`
   transition: all 0.35s ease-in-out;
   opacity: ${(props) => (props.isShow ? 1 : 0)};
   transform: ${(props) =>
-    props.isShow ? "translateY(0)" : "translateY(-100px)"};
+    props.isShow ? "translateY(0)" : "translateY(-100%)"};
+  pointer-events: ${(props) => (props.isShow ? "all" : "none")};
 `;
 
 export function SelectBox({

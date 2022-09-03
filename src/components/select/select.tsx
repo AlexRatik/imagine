@@ -1,33 +1,22 @@
 import { useState } from "react";
 import styled from "styled-components";
-import { Arrow } from "../arrow";
 import { SelectBox } from "./selectBox";
+import { InputTitle } from "../inputTitle/inputTitle";
 
 interface ISelectProps {
   values: string[];
   selectedValue: string;
   name: string;
   width: number;
+  maxWidth?: number;
   height: number;
   onSelect: (value: string) => void;
 }
 
-const StyledSelect = styled.div<{ width: number }>`
+const StyledSelect = styled.div<{ width: number; maxWidth: number }>`
+  position: relative;
   min-width: ${(props) => props.width}px;
-`;
-
-const StyledTitleContainer = styled.div<{ height: number }>`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: ${(props) => props.height};
-  padding: 4px;
-  p {
-    width: 2.5rem;
-  }
-  &:hover {
-    cursor: pointer;
-  }
+  max-width: ${(props) => props.maxWidth}px;
 `;
 
 export function Select({
@@ -35,20 +24,19 @@ export function Select({
   selectedValue,
   name,
   width,
+  maxWidth,
   height,
   onSelect,
 }: ISelectProps) {
   const [showSelectBox, setShowSelectBox] = useState<boolean>(false);
-
   return (
-    <StyledSelect width={width}>
-      <StyledTitleContainer
-        height={height}
+    <StyledSelect width={width} maxWidth={maxWidth || 1000}>
+      <InputTitle
         onClick={() => setShowSelectBox((prev) => !prev)}
-      >
-        <p>{selectedValue}</p>
-        <Arrow rotated={showSelectBox} />
-      </StyledTitleContainer>
+        height={height}
+        text={selectedValue}
+        rotated={showSelectBox}
+      />
       <SelectBox
         name={name}
         values={values}
