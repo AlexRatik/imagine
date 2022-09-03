@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 const StyledContainer = styled.div<IContainerProps>`
   max-width: ${(props) => props.width}px;
+  margin-top: ${(props) => props.marginTop || 0}px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -10,6 +11,7 @@ const StyledContainer = styled.div<IContainerProps>`
 
 interface IContainerProps {
   width: number;
+  marginTop?: number;
   children: ReactNode;
 }
 
