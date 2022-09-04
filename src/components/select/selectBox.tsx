@@ -12,11 +12,13 @@ interface ISelectProps {
   selectedValue: string;
 }
 
-const StyledSelect = styled.div<{ isShow: boolean }>`
+const StyledSelectBox = styled.div<{ isShow: boolean }>`
+  z-index: 1;
   position: absolute;
   width: 100%;
   margin-top: 7px;
   transition: all 0.35s ease-in-out;
+  background-color: #ffffff;
   opacity: ${(props) => (props.isShow ? 1 : 0)};
   transform: ${(props) =>
     props.isShow ? "translateY(0)" : "translateY(-100%)"};
@@ -32,7 +34,7 @@ export function SelectBox({
   selectedValue,
 }: ISelectProps) {
   return (
-    <StyledSelect isShow={isShow}>
+    <StyledSelectBox isShow={isShow}>
       {values.map((value) => (
         <SelectOption
           name={name}
@@ -43,6 +45,6 @@ export function SelectBox({
           checked={selectedValue === value}
         />
       ))}
-    </StyledSelect>
+    </StyledSelectBox>
   );
 }
