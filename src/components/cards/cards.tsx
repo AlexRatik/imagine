@@ -5,7 +5,7 @@ import { Card } from "./card";
 
 export function Cards() {
   return (
-    <Container width={2000} marginTop={60}>
+    <Container width={2000} marginTop={60} marginBottom={100}>
       {cardsStore.map((card) => (
         <Card key={uuidv4()} {...card} />
       ))}
