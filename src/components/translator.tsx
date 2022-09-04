@@ -8,7 +8,7 @@ const StyledTranslator = styled.div`
 `;
 
 export function Translator() {
-  const { language } = useAppSelector((store) => store.translator);
+  const { language } = useAppSelector((store) => store.app);
   const dispatch = useAppDispatch();
 
   return (
