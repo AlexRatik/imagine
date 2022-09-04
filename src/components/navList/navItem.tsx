@@ -22,5 +22,9 @@ const StyledNavItem = styled.li`
 `;
 
 export function NavItem({ children }: INavItem) {
-  return <StyledNavItem>{children}</StyledNavItem>;
+  return (
+    <StyledNavItem>
+      <a href="#">{children}</a>
+    </StyledNavItem>
+  );
 }

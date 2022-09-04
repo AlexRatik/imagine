@@ -1,33 +1,27 @@
 import { v4 as uuidv4 } from "uuid";
-import { ReactComponent as SettingsIcon } from "../../assets/settings.svg";
-import { ReactComponent as HomeIcon } from "../../assets/home.svg";
-import { ReactComponent as UserIcon } from "../../assets/userpic.svg";
 import { NavItem } from "./navItem";
 import styled from "styled-components";
-import { Translator } from "../translator";
-import { ChatIcon } from "../chatIcon";
+import { ReactElement } from "react";
 
-const icons = [
-  <HomeIcon />,
-  <ChatIcon />,
-  <SettingsIcon />,
-  <UserIcon />,
-  <Translator />,
-];
-
-const StyledNavList = styled.ul`
+const StyledNavList = styled.ul<{ width: number }>`
   display: flex;
   flex-flow: row wrap;
   align-items: center;
   justify-content: space-between;
-  min-width: 312px;
+  min-width: ${(props) => props.width || 200}px;
 `;
 
-export function NavList() {
+export function NavList({
+  values,
+  width,
+}: {
+  width: number;
+  values: ReactElement[];
+}) {
   return (
-    <StyledNavList>
-      {icons.map((icon) => (
-        <NavItem key={uuidv4()}>{icon}</NavItem>
+    <StyledNavList width={width}>
+      {values.map((value) => (
+        <NavItem key={uuidv4()}>{value}</NavItem>
       ))}
     </StyledNavList>
   );
