@@ -32,7 +32,7 @@ const StyledTitleContainer = styled.div`
 `;
 
 const StyledMain = styled.main`
-  padding: 166px 255px 0;
+  padding: 166px 255px 208px;
 `;
 
 export function Main() {
