@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.js": "/static/js/main.9b8d0422.js",
+    "static/media/userpic.svg": "/static/media/userpic.ada79248a4c18623a1baac2b536844cd.svg",
+    "static/media/logo.svg": "/static/media/logo.693ae0a1065229899037e6ca6c4d495a.svg",
+    "static/media/logoLight.svg": "/static/media/logoLight.cb7a124ea9a12a372d11fa20f87dbe84.svg",
+    "static/media/settings.svg": "/static/media/settings.b9d3d5fd7f2c9074c395d8bdf357b868.svg",
+    "static/media/instagram.svg": "/static/media/instagram.38bf0e175d96ecb755bbab320184e9f0.svg",
+    "static/media/deleteIcon.svg": "/static/media/deleteIcon.37320f02286e2e128276dbe14e70c88a.svg",
+    "static/media/whatsApp.svg": "/static/media/whatsApp.ed47efbcaa9429d9ec31cc71749a8c9e.svg",
+    "static/media/chat.svg": "/static/media/chat.e19eb830df376c3afd61c01becc337cd.svg",
+    "static/media/home.svg": "/static/media/home.5e4cbc519ac5aa782f02759a257b9c73.svg",
+    "static/media/facebook.svg": "/static/media/facebook.dedaa067c2390a1838a7e46d88cebfa5.svg",
+    "index.html": "/index.html",
+    "static/media/notification.svg": "/static/media/notification.afbadba0238cb58f246a4016e805c512.svg",
+    "main.9b8d0422.js.map": "/static/js/main.9b8d0422.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.9b8d0422.js"
+  ]
+}
