@@ -8,15 +8,23 @@ import { Subscription } from "./subscription";
 
 const StyledPaginationContainer = styled.div`
   display: flex;
-  float: right;
-  margin-left: auto;
   align-items: center;
-  column-gap: 2.5rem;
+  gap: 2rem;
+  width: 100%;
+  height: 60px;
+  place-content: flex-end;
+  @media (max-width: 1240px) {
+    float: none;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 100px;
+  }
 `;
 
 const StyledPagination = styled.div`
   display: flex;
-  width: 414px;
+  width: 30%;
+  height: 100%;
   div:first-child:before,
   div:last-child:before,
   div:first-child:after,
@@ -28,24 +36,29 @@ const StyledPagination = styled.div`
     height: 2px;
   }
   div:first-child:before {
-    top: 21.5px;
-    left: 20px;
+    top: 40%;
+    left: 40%;
     transform: rotate(135deg);
   }
   div:first-child:after {
     transform: rotate(-135deg);
-    top: 32px;
-    left: 20px;
+    top: 60%;
+    left: 40%;
   }
   div:last-child:before {
-    right: 20px;
-    top: 21.5px;
+    right: 40%;
+    top: 40%;
     transform: rotate(225deg);
   }
   div:last-child:after {
-    top: 32px;
-    right: 20px;
+    top: 60%;
+    right: 40%;
     transform: rotate(135deg);
+  }
+
+  @media (max-width: 1240px) {
+    flex-basis: 100%;
+    place-content: space-evenly;
   }
 `;
 

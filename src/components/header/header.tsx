@@ -12,8 +12,17 @@ const StyledHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 3rem;
   min-height: 112px;
   box-shadow: 0 10px 30px 4px rgba(85, 105, 135, 0.03);
+  @media (max-width: 1400px) {
+    padding: 32px 125.5px;
+    justify-content: space-around;
+  }
+  @media (max-width: 400px) {
+    padding: 15px 5px;
+  }
 `;
 
 const icons = [

@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 const StyledPaginationItem = styled.div`
   position: relative;
-  width: 3.75rem;
-  height: 3.75rem;
+  width: 14%;
+  height: 100%;
   border: 1px solid #dfdfdf;
   display: flex;
   align-items: center;
@@ -29,6 +29,10 @@ const StyledPaginationItem = styled.div`
     width: 100%;
     text-align: center;
   }
+  //@media (max-width: 1400px) {
+  //  width: 1.75rem;
+  //  height: 1.75rem;
+  //}
 `;
 
 interface IPaginationItemProps {

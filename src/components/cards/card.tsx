@@ -6,6 +6,12 @@ const StyledCard = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
+  transition: all 0.25s ease-in-out;
+  img {
+    display: block;
+    max-height: 100%;
+    max-width: 100%;
+  }
   svg {
     position: absolute;
     top: 10px;
@@ -16,6 +22,15 @@ const StyledCard = styled.div`
       opacity: 0.6;
     }
   }
+  @media (max-width: 1240px) {
+    width: 45%;
+  }
+  @media (max-width: 640px) {
+    width: 80%;
+  }
+  @media (max-width: 400px) {
+    width: 95%;
+  }
 `;
 
 const StyledSubscription = styled.div`
@@ -24,7 +39,9 @@ const StyledSubscription = styled.div`
   margin-top: 10px;
   div {
     margin-left: 10px;
-    line-height: 150%;
+    p {
+      line-height: 150%;
+    }
     p:first-child {
       font-weight: 600;
     }
@@ -33,8 +50,15 @@ const StyledSubscription = styled.div`
     }
   }
   img {
-    width: 2.2rem;
-    height: 2.2rem;
+    width: 38px;
+    height: 38px;
+  }
+  @media (max-width: 640px) {
+    font-size: 14px;
+    img {
+      width: 28px;
+      height: 28px;
+    }
   }
 `;
 

@@ -17,6 +17,10 @@ const StyledSelect = styled.div<{ width: number; maxWidth: number }>`
   position: relative;
   min-width: ${(props) => props.width}px;
   max-width: ${(props) => props.maxWidth}px;
+  @media (max-width: 1240px) {
+    max-width: 80%;
+    width: 80%;
+  }
 `;
 
 export function Select({

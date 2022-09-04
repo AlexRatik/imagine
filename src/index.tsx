@@ -11,6 +11,12 @@ const root = createRoot(container);
 const GlobalStyles = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
   
+  #root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
   * {
     margin: 0;
     padding: 0;

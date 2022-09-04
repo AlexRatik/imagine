@@ -13,7 +13,7 @@ interface ISelectProps {
 }
 
 const StyledSelectBox = styled.div<{ isShow: boolean }>`
-  z-index: 1;
+  z-index: 2;
   position: absolute;
   width: 100%;
   margin-top: 7px;

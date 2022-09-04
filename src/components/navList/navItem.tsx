@@ -8,7 +8,8 @@ interface INavItem {
 const StyledNavItem = styled.li`
   display: inline;
   &,
-  svg path {
+  svg path,
+  svg {
     transition: all 0.15s ease-in-out;
   }
   &:hover {

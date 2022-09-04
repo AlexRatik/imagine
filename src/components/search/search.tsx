@@ -11,8 +11,12 @@ interface ISearchProps {
 }
 
 const StyledSearch = styled.div<Partial<ISearchProps>>`
+  z-index: 1;
   width: ${(props) => props.width}px;
   height: ${(props) => props.height}px;
+  @media (max-width: 1240px) {
+    width: 80%;
+  }
 `;
 
 export function Search({ title, height, width, inputHeight }: ISearchProps) {

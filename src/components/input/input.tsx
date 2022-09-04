@@ -8,6 +8,7 @@ interface IInputProps {
 }
 
 const StyledInput = styled.input<IInputProps>`
+  z-index: 1;
   width: 100%;
   height: ${(props) => props.height}px;
   background-color: ${(props) => props.backgroundColor};

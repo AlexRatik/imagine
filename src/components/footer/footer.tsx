@@ -6,6 +6,7 @@ import { ReactComponent as Logo } from "../../assets/logoLight.svg";
 import { NavList } from "../navList/navList";
 
 const StyledFooter = styled.footer`
+  flex-shrink: 0;
   position: relative;
   padding: 50px 255px 66px;
   background-color: #000000;
@@ -13,7 +14,12 @@ const StyledFooter = styled.footer`
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  height: 100%;
   justify-content: space-between;
+  @media (max-width: 1400px) {
+    padding: 25px 125.5px 33px;
+    justify-content: space-around;
+  }
 `;
 
 const StyledFooterContainer = styled.div`
@@ -23,6 +29,9 @@ const StyledFooterContainer = styled.div`
 
   &:first-child {
     flex-basis: 63.5%;
+    @media (max-width: 1400px) {
+      flex-basis: 50%;
+    }
   }
 
   .logo {
@@ -52,6 +61,26 @@ const StyledFooterContainer = styled.div`
         fill: lightgray;
       }
     }
+  }
+
+  @media (max-width: 740px) {
+    flex-basis: 100%;
+    a,
+    p {
+      text-align: center;
+    }
+    .logo {
+      margin: 1rem auto;
+    }
+    blockquote {
+      margin: 1rem auto;
+    }
+    ul {
+      margin-top: 1rem;
+    }
+  }
+  @media (max-width: 400px) {
+    padding: 10px 15px;
   }
 `;
 
