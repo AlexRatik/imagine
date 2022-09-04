@@ -5,6 +5,7 @@ import { CategoryType, setCategory } from "../../features/appSlice";
 import { Search } from "../search/search";
 import { Container } from "../container/container";
 import { Cards } from "../cards/cards";
+import { Pagination } from "../pagination/pagination";
 
 const categories = [
   "Sculpture",
@@ -35,7 +36,7 @@ const StyledMain = styled.main`
 `;
 
 export function Main() {
-  const { category } = useAppSelector((store) => store.translator);
+  const { category } = useAppSelector((store) => store.app);
   const dispatch = useAppDispatch();
 
   return (
@@ -44,7 +45,7 @@ export function Main() {
         <h2>Artworks</h2>
         <p>588</p>
       </StyledTitleContainer>
-      <Container width={600}>
+      <Container width={565}>
         <Select
           values={categories}
           selectedValue={category}
@@ -59,6 +60,7 @@ export function Main() {
         <Search height={27} width={278} inputHeight={50} title="Name" />
       </Container>
       <Cards />
+      <Pagination />
     </StyledMain>
   );
 }
