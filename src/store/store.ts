@@ -1,17 +1,13 @@
-import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
-import translatorReducer from "../features/appSlice";
+import { configureStore } from "@reduxjs/toolkit";
+import appReducer from "../features/appSlice";
+import paginationReducer from "../features/paginationSlice";
 
 export const store = configureStore({
   reducer: {
-    translator: translatorReducer,
+    app: appReducer,
+    pagination: paginationReducer,
   },
 });
 
 export type AppDispatch = typeof store.dispatch;
 export type RootState = ReturnType<typeof store.getState>;
-export type AppThunk<ReturnType = void> = ThunkAction<
-  ReturnType,
-  RootState,
-  unknown,
-  Action<string>
->;
